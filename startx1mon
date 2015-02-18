@@ -1,0 +1,2 @@
+cp ~/.config/openbox/autostart.1mon ~/.config/openbox/autostart
+startx

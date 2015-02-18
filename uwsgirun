@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo /var/env/tacle/bin/uwsgi --py-autoreload=2 --ini-paste /var/www/tacle/tacboard/uwsgi.ini

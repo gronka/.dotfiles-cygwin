@@ -1,0 +1,2 @@
+cp ~/.config/xfce4/xfconf/xfce-perchannel-xml/displays.xml.laptop ~/.config/xfce4/xfconf/xfce-perchannel-xml/displays.xml
+startx

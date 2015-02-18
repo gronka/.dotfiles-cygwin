@@ -1,0 +1,16 @@
+PATH=$PATH:/bin:/home/taylor.gem/ruby/2.1.0/bin
+TAC=/var/env/tacle/
+TACLE=/var/www/tacle/
+VENV=/home/taylor/apps/venv/
+
+export WINEPREFIX=~/.wine
+export WINEARCH=win32
+
+#eval $(dircolors -b ~/.dir_colors)
+#alias ls='ls -color=auto'
+
+if [ "$PS1" ]; then
+	complete -cf sudo
+fi
+
+source /etc/profile.d/bash-completion.sh
