@@ -46,6 +46,8 @@ Plugin 'kana/vim-submode'
 Plugin 'jwhitley/vim-matchit' "for matching ML tags, etc
 Plugin 'tpope/vim-capslock'
 
+Plugin 'fatih/vim-go'
+
 
 call vundle#end()
 filetype plugin indent on
@@ -163,16 +165,22 @@ nnoremap <c-t> :tabnew<CR>
 "call tinymode#EnterMap('cycletabs', '<leader>;', '\:tabn\<CR>')
 "call tinymode#Map('cycletabs', 'l', '\:tabp\<CR>')
 "call tinymode#Map('cycletabs', ';', '\:tabn\<CR>')
+"
 call tinymode#EnterMap('tableft', '<leader>l', '')
 call tinymode#Map('tableft', 'l', ':tabp')
 call tinymode#Map('tableft', ';', ':tabn')
 call tinymode#ModeArg('tableft', 'entercmd', ':tabp')
 call tinymode#ModeMsg('tableft', 'oh ja tinymode')
+
 call tinymode#EnterMap('tabright', '<leader>;', '')
 call tinymode#Map('tabright', 'l', ':tabp')
 call tinymode#Map('tabright', ';', ':tabn')
 call tinymode#ModeArg('tabright', 'entercmd', ':tabn')
 call tinymode#ModeMsg('tabright', 'oh ja tinymode')
+
+call tinymode#ModeArg('tableft', 'timeoutlen', 300)
+call tinymode#ModeArg('tabright', 'timeoutlen', 300)
+
 
 
 map <silent> w <Plug>CamelCaseMotion_w
@@ -207,13 +215,6 @@ let g:pep8_ignore="E501,E265,E128"
 let g:pymode_lint_ignore="E501,E265,E128"
 
 
-" jinja commend for NERDCommentator
-augroup SetCMS
-  autocmd FileType jinja let &l:commentstring='{#%s#}'
-augroup END
-
-
-
 " move arrow keys on display lines
 nnoremap <j> gj
 nnoremap <k> gk
@@ -222,6 +223,11 @@ au BufNewfile,BufRead *.jinja2 set filetype=html
 au BufNewfile,BufRead Gruntfile set filetype=javascript
 autocmd FileType scss setlocal expandtab
 
+" jinja commend for NERDCommentator
+" NOTE leads to unexpected html activity
+augroup SetCMS
+  autocmd FileType html let &l:commentstring='{#%s#}'
+augroup END
 
 
 " tacle workspace setup
@@ -246,6 +252,31 @@ function SetupTacle()
 endfunction
 
 command Tacle exec SetupTacle()
+
+
+" tacle workspace setup
+function SetupStartupdex()
+	:edit /home/taylor/projects/startupdex/startupdex/__init__.py
+	":tabe /var/www/tacle/cassaconn/init_cfs.py
+	":NERDTree /var/www/tacle
+	":tabe /var/www/tacle/tacboard/models.py
+	":NERDTree /var/www/tacle
+	:tabe /home/taylor/projects/startupdex/startupdex/models.py
+	:NERDTree /home/taylor/projects/startupdex
+	:tabe /home/taylor/projects/startupdex/startupdex/view_misc.py
+	:NERDTree /home/taylor/projects/startupdex
+	:tabe
+	:NERDTree /home/taylor/projects/startupdex
+	:tabe
+	:NERDTree /home/taylor/projects/startupdex
+	:tabe
+	:NERDTree /home/taylor/projects/startupdex
+	:tabe
+	:NERDTree /home/taylor/projects/startupdex
+endfunction
+
+command Startupdex exec SetupStartupdex()
+
 
 
 " UI options

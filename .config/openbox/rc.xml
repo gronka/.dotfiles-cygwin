@@ -118,12 +118,12 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>6</number>
+    <number>5</number>
     <firstdesk>1</firstdesk>
     <names>
       <name>(Unnamed desktop)</name>
     </names>
-    <popupTime>0</popupTime>
+    <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
        desktops.  Set this to 0 to disable the popup. -->
   </desktops>
@@ -193,16 +193,16 @@
       </action>
     </keybind>
     <!--<keybind key="C-A-Up">-->
-      <!--<action name="GoToDesktop">-->
-        <!--<to>up</to>-->
-        <!--<wrap>no</wrap>-->
-      <!--</action>-->
+    <!--<action name="GoToDesktop">-->
+    <!--<to>up</to>-->
+    <!--<wrap>no</wrap>-->
+    <!--</action>-->
     <!--</keybind>-->
     <!--<keybind key="C-A-Down">-->
-      <!--<action name="GoToDesktop">-->
-        <!--<to>down</to>-->
-        <!--<wrap>no</wrap>-->
-      <!--</action>-->
+    <!--<action name="GoToDesktop">-->
+    <!--<to>down</to>-->
+    <!--<wrap>no</wrap>-->
+    <!--</action>-->
     <!--</keybind>-->
     <keybind key="S-A-Left">
       <action name="SendToDesktop">
@@ -365,7 +365,6 @@
         <command>pcmanfm</command>
       </action>
     </keybind>
-
     <keybind key="XF86AudioRaiseVolume">
       <action name="Execute">
         <command>amixer set -c 1 Master,0 5+</command>
@@ -387,14 +386,9 @@
     <keybind key="W-Up">
       <action name="ToggleMaximize"/>
     </keybind>
-
-
-		<keybind key="W-S-o">
-			<action name="ToggleOmnipresent"/>
-		</keybind>
-
-
-
+    <keybind key="W-S-o">
+      <action name="ToggleOmnipresent"/>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>
@@ -593,7 +587,7 @@
         <action name="Unshade"/>
       </mousebind>
       <!--<mousebind button="Left" action="Click">-->
-        <!--<action name="ToggleOmnipresent"/>-->
+      <!--<action name="ToggleOmnipresent"/>-->
       <!--</mousebind>-->
     </context>
     <context name="Shade">
@@ -851,28 +845,40 @@
 
   # end of the example
 -->
-		<application class="Lxterminal">
-			<decor>no</decor><focus>yes</focus>
-			<size><width>50%</width><height>50%</height></size>
-		</application>
-		<application class="Vim">
-			<decor>no</decor><focus>yes</focus>
-			<fullscreen>yes</fullscreen>
-		</application>
-		<application class="Gvim">
-			<decor>no</decor><focus>yes</focus>
-			<fullscreen>no</fullscreen>
-			<size><width>60%</width><height>70%</height></size>
-		</application>
-		<application class="Viewnior">
-			<decor>no</decor><focus>yes</focus>
-			<size><width>60%</width><height>100%</height></size>
-		</application>
-		<application name="Oracle VM VirtualBox Manager">
-			<decor>no</decor><focus>no</focus>
-			<fullscreen>no</fullscreen>
-		</application>
-
-
+    <application class="Lxterminal">
+      <decor>no</decor>
+      <focus>yes</focus>
+      <size>
+        <width>50%</width>
+        <height>50%</height>
+      </size>
+    </application>
+    <application class="Vim">
+      <decor>no</decor>
+      <focus>yes</focus>
+      <fullscreen>yes</fullscreen>
+    </application>
+    <application class="Gvim">
+      <decor>no</decor>
+      <focus>yes</focus>
+      <fullscreen>no</fullscreen>
+      <size>
+        <width>60%</width>
+        <height>70%</height>
+      </size>
+    </application>
+    <application class="Viewnior">
+      <decor>no</decor>
+      <focus>yes</focus>
+      <size>
+        <width>60%</width>
+        <height>100%</height>
+      </size>
+    </application>
+    <application name="Oracle VM VirtualBox Manager">
+      <decor>no</decor>
+      <focus>no</focus>
+      <fullscreen>no</fullscreen>
+    </application>
   </applications>
 </openbox_config>

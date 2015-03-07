@@ -2,4 +2,4 @@
 #xrandr --auto --output LVDS-1 --mode 1280x800 --left-of VGA-1
 xrandr --auto --output eDP1 --mode 1920x1080 --right-of HDMI1
 xrandr --auto --output VGA1 --mode 1600x900 --left-of HDMI1
-lxterminal &
+. /home/taylor/.config/openbox/startup.sh

@@ -143,9 +143,9 @@
       </startupnotify>
     </action>
   </item>
-  <item label="XChat">
+  <item label="HexChat">
     <action name="Execute">
-      <command>xchat</command>
+      <command>hexchat</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>

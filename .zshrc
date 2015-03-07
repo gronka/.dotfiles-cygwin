@@ -89,14 +89,16 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 #
-PATH=$PATH:/bin:/home/taylor.gem/ruby/2.1.0/bin
-TAC=/var/env/tacle/
-TACLE=/var/www/tacle/
-VENV=/home/taylor/apps/venv/
-J=/home/taylor/junk/env/
+#
+#PATH=$PATH:/bin:/home/taylor.gem/ruby/2.1.0/bin
+#TAC=/var/env/tacle/
+#TACLE=/var/www/tacle/
+#VENV=/home/taylor/apps/venv/
+#J=/home/taylor/junk/env/
+#GOPATH=$HOME/.golang/
 
-export WINEPREFIX=~/.wine
-export WINEARCH=win32
+#export WINEPREFIX=~/.wine
+#export WINEARCH=win32
 HISTFILE=/temp/zsh_hist.$$
 
 JAVA_HOME=/opt/oracle-jdk-bin-1.8.0.31/
