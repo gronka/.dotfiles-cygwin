@@ -21,7 +21,7 @@ Global {
   usefontsize=0
   background=0
   backgroundfile=/usr/share/lxpanel/images/background.png
-  iconsize=25
+  iconsize=24
   loglevel=2
   monitor=1
 }
@@ -54,28 +54,40 @@ Plugin {
   type=launchbar
   Config {
     Button {
-      id=firefox.desktop
-    }
-    Button {
-      id=/usr/share/applications/lxterminal.desktop
-    }
-    Button {
-      id=menu://applications/Development/android-studio-android-studio.desktop
+      id=menu://applications/Internet/firefox.desktop
     }
     Button {
       id=menu://applications/Development/gvim.desktop
     }
     Button {
-      id=menu://applications/Multimedia/vlc.desktop
+      id=menu://applications/System/lxterminal.desktop
     }
     Button {
       id=menu://applications/System/pcmanfm.desktop
     }
     Button {
-      id=menu://applications/System/virtualbox.desktop
+      id=menu://applications/Development/geany.desktop
     }
     Button {
-      id=menu://applications/Games/steam.desktop
+      id=menu://applications/Internet/firefox-bin.desktop
+    }
+    Button {
+      id=menu://applications/Office/libreoffice-calc.desktop
+    }
+    Button {
+      id=menu://applications/Development/android-studio-android-studio.desktop
+    }
+    Button {
+      id=menu://applications/Internet/dillo-dillo.desktop
+    }
+    Button {
+      id=menu://applications/Internet/opera.desktop
+    }
+    Button {
+      id=menu://applications/Internet/qupzilla.desktop
+    }
+    Button {
+      id=menu://applications/Internet/xombrero.desktop
     }
   }
 }

@@ -15,7 +15,10 @@ Plugin 'scrooloose/nerdtree'
 "Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'idanarye/vim-dutyl'
+"Plugin 'Shougo/neocomplete'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'Raimondi/delimitMate' " inserts closing brackets
 Plugin 'honza/vim-snippets'
 Plugin 'mattn/emmet-vim'
@@ -47,6 +50,7 @@ Plugin 'jwhitley/vim-matchit' "for matching ML tags, etc
 Plugin 'tpope/vim-capslock'
 
 Plugin 'fatih/vim-go'
+Plugin 'digitaltoad/vim-jade' " for diet/jade highlighting
 
 
 call vundle#end()
@@ -126,7 +130,7 @@ filetype indent on
 "set nofen
 "let g:pymode_folding = "<leader>h"
 let g:pymode_rope_complete_on_dot = 0
-let g:pymode_rope_completion = 1
+let g:pymode_rope_completion = 0
 let g:pymode_rope_lookup_project = 0
 """""""""""""""
 " seems to be a bug, try removing later
@@ -220,6 +224,7 @@ nnoremap <j> gj
 nnoremap <k> gk
 
 au BufNewfile,BufRead *.jinja2 set filetype=html
+au BufNewfile,BufRead *.dt set filetype=jade
 au BufNewfile,BufRead Gruntfile set filetype=javascript
 autocmd FileType scss setlocal expandtab
 
@@ -254,16 +259,14 @@ endfunction
 command Tacle exec SetupTacle()
 
 
-" tacle workspace setup
+" startupdex workspace setup
 function SetupStartupdex()
 	:edit /home/taylor/projects/startupdex/startupdex/__init__.py
-	":tabe /var/www/tacle/cassaconn/init_cfs.py
-	":NERDTree /var/www/tacle
-	":tabe /var/www/tacle/tacboard/models.py
-	":NERDTree /var/www/tacle
 	:tabe /home/taylor/projects/startupdex/startupdex/models.py
 	:NERDTree /home/taylor/projects/startupdex
 	:tabe /home/taylor/projects/startupdex/startupdex/view_misc.py
+	:NERDTree /home/taylor/projects/startupdex
+	:tabe
 	:NERDTree /home/taylor/projects/startupdex
 	:tabe
 	:NERDTree /home/taylor/projects/startupdex
@@ -277,6 +280,49 @@ endfunction
 
 command Startupdex exec SetupStartupdex()
 
+
+" smashfuse workspace setup
+function SetupSmashfuse()
+	:edit /home/taylor/projects/smashfuse/smashfuse/source/app.d
+	":tabe /home/taylor/projects/smashfuse/smashfuse/models.py
+	:tabe
+	:NERDTree /home/taylor/projects/smashfuse/smashfuse
+	":tabe /home/taylor/projects/smashfuse/smashfuse/view_misc.py
+	:tabe
+	:NERDTree /home/taylor/projects/smashfuse/smashfuse
+	:tabe
+	:NERDTree /home/taylor/projects/smashfuse/smashfuse
+	:tabe
+	:NERDTree /home/taylor/projects/smashfuse/smashfuse
+	:tabe
+	:NERDTree /home/taylor/projects/smashfuse/smashfuse
+	:tabe
+	:NERDTree /home/taylor/projects/smashfuse/smashfuse
+endfunction
+
+command Smashfuse exec SetupSmashfuse()
+
+
+" smashfuse original workspace setup
+function SetupSmashfuse2()
+	:edit /home/taylor/projects/smashfuse2/app.js
+	":tabe /home/taylor/projects/smashfuse/smashfuse/models.py
+	:tabe
+	:NERDTree /home/taylor/projects/smashfuse2
+	":tabe /home/taylor/projects/smashfuse/view_misc.py
+	:tabe
+	:NERDTree /home/taylor/projects/smashfuse2
+	:tabe
+	:NERDTree /home/taylor/projects/smashfuse2
+	:tabe
+	:NERDTree /home/taylor/projects/smashfuse2
+	:tabe
+	:NERDTree /home/taylor/projects/smashfuse2
+	:tabe
+	:NERDTree /home/taylor/projects/smashfuse2
+endfunction
+
+command Smashfuse2 exec SetupSmashfuse2()
 
 
 " UI options
@@ -302,8 +348,6 @@ highlight iCursor guifg=white guibg=steelblue
 
 set guicursor=a:blinkon0  " Slow down cursor blinking speed"
 
-"let g:virtualenv_auto_activate
-let g:syntastic_python_python_exec = '/var/envtacle/bin/python'
 
 "colorschemes for bright colors:
 "zellner, shine
@@ -315,4 +359,49 @@ set nomodeline
 
 " highlight colons to distinguish them from semicolons
 match todo /;/
+
+"let g:virtualenv_auto_activate
+let g:syntastic_python_python_exec = '/var/envtacle/bin/python'
+
+let g:ycm_register_as_syntastic_checker = 1
+let g:ycm_enable_diagnostics_highlighting = 0
+let g:ycm_always_populate_location_list = 1 " default 0
+let g:ycm_enable_diagnostics_highlighting = 0
+"let g:ycm_autoclose_preview_window_after_completion = 1
+"
+let g:ycm_global_ycm_extra_conf = '~./ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 1
+"let g:ycm_min_num_of_chars_for_completion = 50
+let g:ycm_min_num_identifier_candidate_chars = 0
+let g:ycm_auto_trigger = 0
+
+"nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" use jedi-vim with neocomplete
+" NEOCOMPLCACHE SETTINGS
+"let g:neocomplcache_enable_at_startup = 1
+"imap neosnippet#expandable() ? "(neosnippet_expand_or_jump)" : pumvisible() ? "" : ""
+"smap neosnippet#expandable() ? "(neosnippet_expand_or_jump)" :
+"let g:neocomplcache_force_overwrite_completefunc = 1
+"if !exists('g:neocomplcache_omni_functions')
+  "let g:neocomplcache_omni_functions = {}
+"endif
+"if !exists('g:neocomplcache_force_omni_patterns')
+  "let g:neocomplcache_force_omni_patterns = {}
+"endif
+"let g:neocomplcache_force_overwrite_completefunc = 1
+"let g:neocomplcache_force_omni_patterns['python'] = '[^. t].w*'
+"set ofu=syntaxcomplete#Complete
+"au FileType python set omnifunc=pythoncomplete#Complete
+"au FileType python let b:did_ftplugin = 1
+
+
+
+" Vim-jedi settings
+"let g:jedi#popup_on_dot = 0
+"autocmd FileType python setlocal omnifunc=jedi#completions
+"let g:jedi#completions_enabled = 0
+"let g:jedi#auto_vim_configuration = 0
+"let g:neocomplete#force_omni_input_patterns.python ='\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+" alternative pattern: '\h\w*\|[^. \t]\.\w*'
 

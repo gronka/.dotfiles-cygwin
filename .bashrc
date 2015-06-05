@@ -12,10 +12,14 @@ alias python=/home/taylor/.local/env34/bin/python
 alias pip=/home/taylor/.local/env34/bin/pip
 alias easy_install=/home/taylor/.local/env34/bin/easy_install
 S=/home/taylor/.local/env34/bin
+E=/home/taylor/.local/env27/bin
 #alias python=/home/taylor/.local/env27/bin/python
 #alias pip=/home/taylor/.local/env27/bin/pip
 #alias easy_install=/home/taylor/.local/env27/bin/easy_install
 
+myyoutube360() {
+	youtube-dl $1 -f 243+171 -o '/home/taylor/Downloads/yc/%(uploader)s %(title)s-%(id)s.%(ext)s' --write-thumbnail
+}
 myyoutube480() {
 	youtube-dl $1 -f 135+141 -o '/home/taylor/Downloads/yc/%(uploader)s %(title)s-%(id)s.%(ext)s' --write-thumbnail
 }
@@ -25,8 +29,17 @@ myyoutube720() {
 myyoutube() {
 	youtube-dl $1 -f 137+141 -o '/home/taylor/Downloads/yc/%(uploader)s %(title)s-%(id)s.%(ext)s' --write-thumbnail
 }
+myyoutube2() {
+	youtube-dl $1 -f 299+141 -o '/home/taylor/Downloads/yc/%(uploader)s %(title)s-%(id)s.%(ext)s' --write-thumbnail
+}
+myyoutube303() {
+	youtube-dl $1 -f 303+171 -o '/home/taylor/Downloads/yc/%(uploader)s %(title)s-%(id)s.%(ext)s' --write-thumbnail
+}
 myyoutube2160() {
 	youtube-dl $1 -f 266+141 -o '/home/taylor/Downloads/yc/%(uploader)s %(title)s-%(id)s.%(ext)s' --write-thumbnail
+}
+myyoutube1920() {
+	youtube-dl $1 -f 272+171 -o '/home/taylor/Downloads/yc/%(uploader)s %(title)s-%(id)s.%(ext)s' --write-thumbnail
 }
 myyoutube1440() {
 	youtube-dl $1 -f 264+141 -o '/home/taylor/Downloads/yc/%(uploader)s %(title)s-%(id)s.%(ext)s' --write-thumbnail

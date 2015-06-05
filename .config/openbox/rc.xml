@@ -880,5 +880,10 @@
       <focus>no</focus>
       <fullscreen>no</fullscreen>
     </application>
+    <application class="Wine">
+      <decor>no</decor>
+      <focus>no</focus>
+      <fullscreen>no</fullscreen>
+    </application>
   </applications>
 </openbox_config>
