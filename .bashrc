@@ -17,6 +17,8 @@ E=/home/taylor/.local/env27/bin
 #alias pip=/home/taylor/.local/env27/bin/pip
 #alias easy_install=/home/taylor/.local/env27/bin/easy_install
 
+export VISUAL="vim"
+
 myyoutube360() {
 	youtube-dl $1 -f 243+171 -o '/home/taylor/Downloads/yc/%(uploader)s %(title)s-%(id)s.%(ext)s' --write-thumbnail
 }
