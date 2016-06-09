@@ -100,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 #export WINEPREFIX=~/.wine
 #export WINEARCH=win32
 #HISTFILE=/temp/zsh_hist.$$
-HISTFILE=~/.zsh_hist.$$
+HISTFILE=~/.zsh_hist
 SAVEHIST=1000
 
 JAVA_HOME=/opt/oracle-jdk-bin-1.8.0.31/
